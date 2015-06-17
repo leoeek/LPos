@@ -1,0 +1,101 @@
+<div class="scrollable">  
+    <div class="scrollable-content">
+
+        <div class="">
+            <div class="list-group-item cabecalho">
+                <h3>Olá! Vamos começar?<br/><small>Fique de olho em suas tarefas!</small></h3>
+            </div>
+            
+<!--
+            <a class="list-group-item media lista" href="" ng-repeat="item in scrollItems">
+              <div class="pull-left">
+                  <i class="fa fa-user chat-user-avatar"></i>
+              </div>
+              <div class="media-body">
+                  <h5 class="media-heading">{{item.descricao}}</h5>
+                  <p>{{item.detalhe}}</p>
+                  <small ng-switch on="user.online">
+                      <span ng-switch-when="true">
+                          <span class="label label-success">Hoje</span>
+                      </span>
+                      <span ng-switch-default>
+                          <span class="label label-default"><i>Atrasado</i>
+                          </span>
+                      </span>
+                  </small>
+              </div>
+          </a>
+-->
+            
+            <div class="list-group">
+              <div ng-repeat="item in tarefaPendentes"  ng-hide="boxTarefaVisivel" class="list-group-item lista">
+                  <div class="btn-group pull-right">
+                    <a ui-turn-on="myDropdown" class='btn'>
+                      <i class="exibeDt">{{item.dt}}</i> 
+<!--                        <i class="fa fa-ellipsis-v iconeDrop"></i>-->
+                    </a>
+<!--
+                    <ul 
+                      class="dropdown-menu"
+                      ui-outer-click="Ui.turnOff('myDropdown')"
+                      ui-outer-click-if="Ui.active('myDropdown')"
+                      role="menu"
+                      ui-show="myDropdown" 
+                      ui-state="myDropdown"
+                      ui-turn-off="myDropdown">
+
+                      <li><a ui-turn-on="modalExcluir" ng-click="defineExclusao(item)">Excluir tarefa</a></li>                      
+                    </ul>
+-->
+                  </div>
+                  
+                <a href="#/adicionar_tarefa?id={{item.id}}&descricao={{item.descricao}}&dt={{item.dtPadrao}}&detalhe={{item.detalhe}}&dtTela={{item.dt}}&hora={{item.hora}}" ng-click="clicado()">
+                    
+                    <span class="itemDescricao">{{item.descricao}}</span> 
+                    <br>
+                    {{item.detalhe}}
+                    <small>
+                      <span ng-if="item.dt == dtAtual">
+                          <span class="label label-success">Hoje</span>
+                      </span>
+<!--
+                      <span ng-if="item.dt != dtAtual">
+                          <span class="label label-default"><i>Atrasado</i>
+                          </span>
+                      </span>
+-->
+                  </small>
+                </a>    
+              </div>
+            </div>
+            
+<!--
+
+            <div class="section">
+              <div class="panel-group" 
+                ui-state='myAccordion'>
+
+                <div class="panel panel-default"  ng-repeat="item in scrollItems">
+                  <div class="panel-heading" ui-set="{'myAccordion': item.id}">
+                    <h4 class="panel-title">
+                        {{item.descricao}} - <i>{{item.dt}}</i>
+                    </h4>
+                  </div>
+
+                  <div ui-if="myAccordion == item.id" ui-scope-context='item.id'>
+                    <div class="panel-body">
+                      {{item.detalhe}}
+                    </div>
+                  </div>
+                </div>          
+              </div>
+            </div>
+-->
+        </div>
+        
+        <div ui-content-for="modals">
+          <div ng-include="'dialog_excluir.html'"></div>
+        </div>
+
+    </div>
+</div>

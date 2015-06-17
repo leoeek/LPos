@@ -1,0 +1,21 @@
+<div class="modal" ui-if='modalExcluir' ui-state='modalExcluir'>
+  <div class="modal-backdrop in"></div>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close"
+                ui-turn-off="modal2">&times;</button>
+        <h4 class="modal-title">Deseja realmente excluir essa tarefa?</h4>
+      </div>
+      <div class="modal-body">
+        <p><b>Descrição: </b>{{exclusao.descricao}}</p>
+        <p><b>Detalhe: </b>{{exclusao.detalhe}}</p>
+        <p><b>Data: </b>{{exclusao.dt}}</p>
+      </div>
+      <div class="modal-footer">
+        <button ui-turn-off="modalExcluir" class="btn btn-default">Não</button>
+        <button ui-turn-off="modalExcluir"  ng-click="excluirTarefa(exclusao.id)" class="btn btn-danger">Sim</button>
+      </div>
+    </div>
+  </div>
+</div>

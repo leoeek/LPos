@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />    
+    <title>Teste</title>
+    <script src="https://code.angularjs.org/1.2.15/angular.min.js"></script>
+      <script src="js/angular-route.min.js"></script>
+<!--
+    <script src="js/angular-touch.min.js"></script>
+    <script src="js/mobile-angular-ui.min.js"></script>
+-->
+    <script>        
+        var app = angular.module('LPos', ["ngRoute"]);
+        
+        app.config(function($routeProvider, $locationProvider) {
+            $routeProvider.when('/', {templateUrl: "home.html"});
+            $routeProvider.when('/adicionar_tarefa', {templateUrl: "adicionar_tarefa.html"});
+        });
+        
+        app.controller('Principal', function($rootScope, $scope){
+
+            $rootScope.$on("$routeChangeStart", function(){
+                $rootScope.loading = true;
+            });
+
+            $rootScope.$on("$routeChangeSuccess", function(){
+                $rootScope.loading = false;
+            }); 
+
+            
+
+        });  
+        
+        app.controller('CadastroTarefa', function($rootScope, $scope){
+            //Rotina de gravação
+            $scope.cadastroDescricao = "ai léo! sou novo";            
+            $scope.gravar = function() {
+              console.log($scope.cadastroDescricao);
+              alert($scope.cadastroDescricao);
+            }
+        });
+    </script>
+  </head>
+  <body ng-app="LPos" ng-controller="Principal">
+      
+      <ul class="nav nav-tabs">
+         <li ng-class="{active: activetab == '/'}"><a href="#/">Home</a></li>
+         <li ng-class="{active: activetab == '/adicionar_tarefa'}"><a href="#/adicionar_tarefa">add</a></li>
+      </ul>
+      
+      <div ng-view></div>
+    
+  </body>
+</html>

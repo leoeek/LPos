@@ -1,0 +1,33 @@
+<div ui-content-for="title">
+  <span>Sobre</span>
+</div>
+
+<div class="scrollable">
+  <div class="scrollable-content">
+    <div class='section'>
+      <ui-state id='activeTab' default='1'></ui-state>
+        
+      <div class="btn-group justified nav-tabs">
+        <a ui-set="{'activeTab': 1}" 
+            ui-class="{'active': activeTab == 1}" class="btn btn-default">Objetivo</a>
+
+        <a ui-set="{'activeTab': 2}" 
+            ui-class="{'active': activeTab == 2}" class="btn btn-default">Créditos</a>
+      </div>  
+        
+      <div ui-if="activeTab == 1">
+          <br>
+          <p>O <b>App Tarefa na mão</b> foi criado para demonstrar a velocidade em desenvolvimento de App Hibrido.</p>
+          <p>Essa foi a proposta de um projeto de Pós graduação.</p>
+      </div>
+
+      <div ui-if="activeTab == 2">
+          <br>
+          <p><b>Orientador: </b> Ramon Rosa Maia Vieira Junior.</p>
+          <p><b>Aluno: </b> Leonardo Lima Procópio.</p>
+          <p><b>Instituição: </b> ESAB.</p>
+      </div>      
+    </div>
+
+  </div>
+</div>

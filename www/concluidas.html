@@ -1,0 +1,42 @@
+<div class="scrollable">  
+    <div class="scrollable-content">
+
+        <div class="" ng-controller="TarefasConcluidas">
+            <div class="list-group-item cabecalho">
+                <h1>Parabéns!<br/><small>Tarefas concluídas.</small></h1>
+            </div>
+            
+<!--
+            <div class="list-group">
+              <div ng-repeat="item in tarefaConcluida" class="list-group-item lista">
+                <a >
+                    <span class="itemDescricao">{{item.descricao}} <i>{{item.dt}}</i></span> <i class="fa fa-bookmark pull-right"></i><br>
+                    {{item.detalhe}}
+                </a>    
+              </div>
+            </div>
+-->
+            
+            <div class="section">
+              <div class="panel-group" ui-state='itemTarefa'>
+
+                <div class="panel panel-default"  ng-repeat="item in tarefaConcluida">
+                  <div class="panel-heading" ui-set="{'itemTarefa': item}">
+                    <h4 class="panel-title">
+                        {{item.descricao}} - <i>{{item.dt}}</i>
+                    </h4>
+                  </div>
+
+                  <div ui-if="itemTarefa == item" ui-scope-context='item'>
+                    <div class="panel-body">
+                      {{item.detalhe}}
+                    </div>
+                  </div>
+                </div>          
+              </div>
+            </div>
+     
+        </div>
+
+    </div>
+</div>

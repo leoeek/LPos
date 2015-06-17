@@ -1,0 +1,63 @@
+<div ui-content-for="title">   
+  <span></span>
+</div>
+
+<div class="scrollable"  ng-controller="CadastroForm">
+    
+ <div ui-content-for="navbarAction">
+      <div class="btn btn-navbar lkBt">
+        <a href="index.html"><i class="fa fa-home"></i></a>
+        <a ng-if="cadastro.id > 0" ui-turn-on="modalConcluir" class="lkIconeConcluir"><i class="fa fa-check"></i></a>
+      </div>
+ </div>
+
+ <div class="scrollable-content section">
+   
+   <form role="form">
+       <fieldset>
+        <legend>Adicionar tarefa</legend>
+          
+            <div class="form-group has-success has-feedback">
+                <input type="text" id="id" ng-model="cadastro.id" ng-hide="true">    
+
+                <input type="text" class="form-control" id="edDescricao" label="" label-class="col-xs-3 col-sm-2 col-lg-1" class="col-xs-10 col-sm-11 col-lg-12" placeholder="Qual é a sua tarefa?" ng-model="cadastro.descricao" required title="Pelo menos informe a descrição de sua tarefa!">
+            </div>        
+
+            <div class="form-group">
+                <label>Detalhes</label>    
+                <textarea type="text" id="edDetalhes" ng-model="cadastro.detalhe" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>No dia</label>
+                <input id="dtTarefa" type="datetime-local" ng-model="cadastro.dt" class="form-control" />                    
+            </div>
+           
+<!--
+            <div class="form-group">
+                <label>Na hora</label>
+                <input id="horaTarefa" type="datetime-local" ng-model="cadastro.hora" class="form-control" />    
+            </div>
+-->
+                      
+           <div ui-content-for="navbarActionSecundaria">
+                <a href="#/" class="btn btn-primary pull-left"><i class="fa fa-arrow-left"></i> Voltar</a>
+                <a ng-click="gravar()" ui-turn-on="modalAlerta" class="btn btn-primary pull-right"><i class="fa fa-save"></i> Gravar</a>
+           </div>
+
+       </fieldset>
+   </form>
+     
+<!--
+     <a href="" 
+          ui-turn-on="modal1"
+          class="btn btn-default">Show Modal</a>
+-->
+     
+    <div ui-content-for="modals">
+      <div ng-include="'dialog_concluir.html'"></div>
+      <div ng-include="'alerta.html'"></div>
+    </div>
+
+ </div>
+</div>

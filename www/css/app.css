@@ -1,0 +1,69 @@
+.app-content-loading {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  position: relative;
+}
+.loading-spinner {
+  position: absolute;
+  font-size: 50px;
+  left: 50%;
+  top: 50%;
+  margin-left: -25px;
+  margin-top: -25px;
+}
+
+/*SIDEBAR*/
+h1.app-name { color: #000 !important; border-bottom: 2px solid #C9C9C9 }
+.lkIconeConcluir { margin-left: 15px; }
+/*FIM SIDEBAR*/
+
+.scrollable { background-color: #FFF }
+.lkBt { font-size: 2.4em; font-weight: bold }
+.lista { margin: 0px 10px; 
+-webkit-box-shadow: 1px 2px 5px 0px rgba(50, 50, 50, 1);
+-moz-box-shadow:    1px 2px 5px 0px rgba(50, 50, 50, 1);
+box-shadow:         1px 2px 5px 0px rgba(50, 50, 50, 1); }
+.cabecalho { margin-bottom: 10px; -webkit-box-shadow: 1px 2px 5px 0px rgba(50, 50, 50, 1);
+-moz-box-shadow:    1px 2px 5px 0px rgba(50, 50, 50, 1);
+box-shadow:         1px 2px 5px 0px rgba(50, 50, 50, 1); }
+.lista a { display: block; color: #000 }
+.lista a:active, .lista a:hover { text-decoration: none }
+.lista span.itemDescricao { font-weight: 2.5em !important; font-weight: bold; display: inline-block; width: 95% }
+.lista span.itemDescricao i { float: right; color: #0086c6 }
+.lista i.exibeDt { font-style: normal; font-size: 0.8em; font-weight: bold; color: #ff6600}
+.lista i.iconeDrop { margin-left: 25px }
+.container-fluid { margin-top: 20px }
+
+[drag-to-dismiss]{
+  transform: translate(0,0); /* NOTE: this is required to prevent mobile webkit issues */ 
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  opacity: 1;
+}
+.notices-container {
+  overflow-x: hidden;
+}
+
+.dismiss {
+  opacity: 0.5;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.dismitted {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
