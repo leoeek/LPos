@@ -1,2 +1,3 @@
 # LPos
-Código fonte de um controle de tarefas utilizado como artigo de conclusão da POS.
+Código fonte de um APP de controle de tarefas utilizado como artigo de conclusão da POS.
+- Utiliza Mobile Angular UI.
